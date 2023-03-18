@@ -49,10 +49,6 @@ public class StudentRepositoryImpl implements StudentRepository {
         try (Session session = factory.getCurrentSession()) {
             session.beginTransaction();
             entities.forEach(session::merge);
-//            for (Student entity : entities) {
-//                Student mergedEntity = (Student) session.merge(entity);
-//                entity = mergedEntity;
-//            }
             session.getTransaction().commit();
             return entities;
         }

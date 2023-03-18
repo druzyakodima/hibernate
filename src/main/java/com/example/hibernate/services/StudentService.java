@@ -20,15 +20,15 @@ public class StudentService {
         System.out.println("Количество записей в БД: " + studentRepository.countAll());
     }
 
-    public Student findStudentById(Long id){
+    public Student findStudentById(Long id) {
         return studentRepository.findById(id);
     }
 
-    public List<Student> findAllStudents(){
+    public List<Student> findAllStudents() {
         return studentRepository.findAll();
     }
 
-    public void printAllStudents(){
+    public void printAllStudents() {
         System.out.println("Полный список студентов:");
         studentRepository.findAll().forEach(System.out::println);
     }
@@ -43,11 +43,11 @@ public class StudentService {
         studentRepository.removeAll();
     }
 
-    public void deleteStudentById(Long id){
+    public void deleteStudentById(Long id) {
         studentRepository.deleteById(id);
     }
 
-    public Student renameStudent(Long id, String newName){
+    public Student renameStudent(Long id, String newName) {
 
         if (studentRepository.countAll() == 0) return null;
         Student student = studentRepository.findById(id);
